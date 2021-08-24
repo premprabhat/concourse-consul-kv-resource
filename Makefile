@@ -1,7 +1,7 @@
 all: build acc-test
 
 build:
-	docker build -t concourse-consul-kv-resource .
+	docker buildx build --platform linux/amd64,linux/arm64 -t consul_image:arm_latest  .
 
 compose-up:
 	docker-compose \
